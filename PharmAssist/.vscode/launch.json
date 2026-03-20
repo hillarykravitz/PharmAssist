@@ -10,7 +10,7 @@
             "name": "Current File",
             "request": "launch",
             "mainClass": "Main",
-            "vmArgs": "--module-path /Users/hillarykravitz/Documents/JavaFX_2026/javafx-sdk-25.0.2/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics --enable-native-access=javafx.graphics"
+            "vmArgs": "--module-path /Users/hillarykravitz/Documents/JavaFX/javafx-sdk-25.0.2/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics --enable-native-access=javafx.graphics"
         }
     ]
 }

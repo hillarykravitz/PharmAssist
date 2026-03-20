@@ -2,6 +2,19 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/javafx-swt.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/javafx.base.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/javafx.controls.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/javafx.fxml.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/javafx.graphics.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/javafx.swing.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/javafx.web.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/jdk.jsobject.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/javafx.media.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/jfx.incubator.input.jar",
+        "/Users/hillarykravitz/Documents/JAVAFX/javafx-sdk-25.0.2/lib/jfx.incubator.richtext.jar",
+        "/Users/hillarykravitz/Documents/MySQL/mysql-connector-j-9.6.0/mysql-connector-j-9.6.0.jar",
+        "/Users/hillarykravitz/Documents/MySQL/mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar"
     ]
 }

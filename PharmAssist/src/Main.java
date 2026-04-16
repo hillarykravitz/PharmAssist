@@ -1,4 +1,5 @@
 import javafx.stage.Stage;
+import Controller.SceneCreator;
 import javafx.application.Application;
 
 public class Main extends Application {

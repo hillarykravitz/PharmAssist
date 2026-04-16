@@ -1,3 +1,4 @@
+package Controller;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -57,8 +58,10 @@ public class SceneCreator {
         return new Scene(vbox, 300, 200);
     }
 
-    // 
+    // -- Dashboard Scene Creator Method -- //
     public Scene createDashboardScene() {
+
+        // -- Pre-Implementation Startup for Testing -- // 
         Label label = new Label("Login success! Welcome to Dashboard.");
         VBox vbox = new VBox(label);
         vbox.setAlignment(Pos.CENTER);

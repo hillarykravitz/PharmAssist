@@ -1,7 +1,8 @@
+package User;
 // -- I'm not sure I need this file, I don't think it's really doing anything currently..? -- //
 
 public class User {
-    private int userID;
+    private int employeeID;
     private String firstName;
     private String lastName;
     private String username;
@@ -9,8 +10,8 @@ public class User {
     private String passwordHash;
     private String email;
 
-    public User(int userID, String firstName, String lastName, String username, String role, String passwordHash, String email) {
-        this.userID = userID;
+    public User(int employeeID, String firstName, String lastName, String username, String role, String passwordHash, String email) {
+        this.employeeID = employeeID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -24,12 +25,12 @@ public class User {
     }
 
     // Getters and Setters for accessing/modifying data
-    public int getID() {
-        return this.userID;
+    public int getEmployeeID() {
+        return this.employeeID;
     }
 
-    public void setID(int userID) {
-        this.userID = userID;
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
     }
 
     public String getFirstName() {
@@ -82,8 +83,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "userID=" + userID +
+        return "Employee{" +
+                "employeeID=" + employeeID +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", username='" + username + '\'' +

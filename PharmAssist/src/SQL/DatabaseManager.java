@@ -1,3 +1,4 @@
+package SQL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,9 +9,9 @@ import java.util.Properties;
 public class DatabaseManager {
     
     // -- Connection Attributes -- //
-    static final String DB_URL = "jdbc:mysql://localhost:3306/pharmDB";
-    static final String DB_USER = "root";
-    static final String DB_PASS = "Ph4rm45515t";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/pharmDB";
+    private static final String DB_USER = "root";
+    private static final String DB_PASS = "Ph4rm45515t";
 
     // --- Establishes connection to Database --- //
     public static Connection getConnection() throws SQLException {

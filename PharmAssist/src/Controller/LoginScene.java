@@ -1,4 +1,5 @@
 package Controller;
+
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -7,17 +8,15 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
-public class SceneCreator {
+public class LoginScene {
     
-    private Stage stage;
+    // -- LoginScene getScene Method -- //
+    public Scene getScene(Stage stage, SceneController sceneController) {
 
-    // -- Constructor -- //
-    public SceneCreator(Stage stage) {
-        this.stage = stage;
-    }
+        // -- Set Startup Title: "PharmAssist Login" -- //
+        stage.setTitle("PharmAssist Login");
 
-    // -- Login Scene Creator Method -- //
-    public Scene createLoginScene() {
+
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
@@ -51,24 +50,10 @@ public class SceneCreator {
         vbox.getChildren().addAll(statusLabel, grid);
 
         // -- LoginController Object Instantiation to handle Event Logic -- //
-        LoginController loginController = new LoginController(usernameField, passwordField, statusLabel, this);
+        AppController appController = new AppController(usernameField, passwordField, statusLabel, sceneController);
 
         // -- Login Button Event Handler -- //
-        loginButton.setOnAction(loginController::handleLoginButtonAction);
+        loginButton.setOnAction(appController::handleLoginButtonAction);
         return new Scene(vbox, 300, 200);
-    }
-
-    // -- Dashboard Scene Creator Method -- //
-    public Scene createDashboardScene() {
-
-        // -- Pre-Implementation Startup for Testing -- // 
-        Label label = new Label("Login success! Welcome to Dashboard.");
-        VBox vbox = new VBox(label);
-        vbox.setAlignment(Pos.CENTER);
-        return new Scene(vbox, 300, 200);
-    }
-
-    public Stage getStage() {
-        return stage;
     }
 }

@@ -1,7 +1,8 @@
 package User;
-// -- I'm not sure I need this file, I don't think it's really doing anything currently..? -- //
 
 public class User {
+
+    // -- Class Attributes -- //
     private int employeeID;
     private String firstName;
     private String lastName;
@@ -10,6 +11,7 @@ public class User {
     private String passwordHash;
     private String email;
 
+    // -- Constructors -- //
     public User(int employeeID, String firstName, String lastName, String username, String role, String passwordHash, String email) {
         this.employeeID = employeeID;
         this.firstName = firstName;
@@ -24,7 +26,7 @@ public class User {
 
     }
 
-    // Getters and Setters for accessing/modifying data
+    // -- Getters and Setters -- //
     public int getEmployeeID() {
         return this.employeeID;
     }
@@ -69,9 +71,10 @@ public class User {
         return this.passwordHash;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
+    // -- Shouldn't be able to use I think -- //
+    // public void setPasswordHash(String passwordHash) {
+    //     this.passwordHash = passwordHash;
+    // }
 
     public String getEmail() {
         return this.email;
@@ -81,6 +84,7 @@ public class User {
         this.email = email;
     }
 
+    // -- toString Override for Testing -- //
     @Override
     public String toString() {
         return "Employee{" +

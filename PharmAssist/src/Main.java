@@ -1,5 +1,5 @@
 import javafx.stage.Stage;
-import Controller.SceneCreator;
+import Controller.SceneController;
 import javafx.application.Application;
 
 public class Main extends Application {
@@ -7,11 +7,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        SceneCreator sceneCreator = new SceneCreator(primaryStage);
+        // -- SceneCreator Instantiation -- //
+        SceneController sceneController = new SceneController(primaryStage);
         
-        // -- Initial setup -- //
-        primaryStage.setTitle("PharmAssist Login");
-        primaryStage.setScene(sceneCreator.createLoginScene());
+        // -- Initial setup of Login screen -- //
+        sceneController.switchToLogin();
         primaryStage.show();
     }
 

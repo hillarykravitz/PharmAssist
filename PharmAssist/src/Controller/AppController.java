@@ -7,44 +7,39 @@ import User.UserService;
 import javafx.event.ActionEvent;
 
 
-public class LoginController {
+public class AppController {
 
-    // -- Attributes -- //
+    // -- Class Attributes -- //
     private TextField usernameField;
     private PasswordField passwordField;
     private Label statusLabel;
-    private SceneCreator sceneCreator;
+    private SceneController sceneController;
 
     // -- UserService Object Instantiation -- //
     private UserService userService = new UserService();
 
     // -- Constructor -- //
-    public LoginController(TextField usernameField, PasswordField passwordField, Label statusLabel, SceneCreator sceneCreator) {
+    public AppController(TextField usernameField, PasswordField passwordField, Label statusLabel, SceneController sceneController) {
         this.usernameField = usernameField;
         this.passwordField = passwordField;
         this.statusLabel = statusLabel;
-        this.sceneCreator = sceneCreator;
+        this.sceneController = sceneController;
     }
 
     // -- Handle Login Button Method -- //
     public void handleLoginButtonAction(ActionEvent event) {
         String username = usernameField.getText();
         String password = passwordField.getText();
-
         // -- Run user input against database info using UserService's class method(s) -- //
-        //boolean isValid = userService.validateLogin(username, password);
-
         User user = userService.validateLogin(username, password);
-
-
-        
+        // -- If no User returned (null), add Label and remain on Login Scene -- //
+        // -- Else: load Dashboard scene and pass the User object -- //
         if (user == null) {
             statusLabel.setText("Invalid username/password. Please try again.");
-            statusLabel.setText("Success. Redirecting...");
-            sceneCreator.getStage().setScene(sceneCreator.createDashboardScene());
+            sceneController.switchToLogin();
         } else {
             statusLabel.setText("Success. Redirecting...");
-            sceneCreator.getStage().setScene(sceneCreator.createDashboardScene());
+            sceneController.switchToDashboard(user);
         }
     }
 }

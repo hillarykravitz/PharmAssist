@@ -4,17 +4,23 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import User.User;
+import User.UserService;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.stage.Stage;
 
 public class LoginScene {
+
+    // private UserService userService;
+
+    // public LoginScene(UserService userService) {
+    //     this.userService = userService;
+    // }
+
+    // UserService userService = new UserService();
     
     // -- LoginScene getScene Method -- //
-    public Scene getScene(Stage stage, SceneController sceneController) {
-
-        // -- Set Startup Title: "PharmAssist Login" -- //
-        stage.setTitle("PharmAssist Login");
+    public Scene getScene(SceneController sceneController, UserService userService) {
 
 
         GridPane grid = new GridPane();
@@ -49,11 +55,22 @@ public class LoginScene {
         vbox.setAlignment(Pos.CENTER); // Center all children within
         vbox.getChildren().addAll(statusLabel, grid);
 
-        // -- LoginController Object Instantiation to handle Event Logic -- //
-        AppController appController = new AppController(usernameField, passwordField, statusLabel, sceneController);
-
         // -- Login Button Event Handler -- //
-        loginButton.setOnAction(appController::handleLoginButtonAction);
+        loginButton.setOnAction(event -> {
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+            // -- Run user input against database info using UserService's class method(s) -- //
+            User user = userService.validateLogin(username, password);
+            // -- If no User returned (null), add Label and remain on Login Scene -- //
+            // -- Else: load Dashboard scene and pass the User object -- //
+            if (user == null) {
+                statusLabel.setText("Invalid username/password. Please try again.");
+                sceneController.switchToLogin(userService);
+            } else {
+                statusLabel.setText("Success. Redirecting...");
+                sceneController.switchToDashboard(user, userService);
+            }
+        });
         return new Scene(vbox, 300, 200);
     }
 }

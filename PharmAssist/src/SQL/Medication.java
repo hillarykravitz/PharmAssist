@@ -18,50 +18,23 @@ public class Medication {
         this.pharmacyQuantity = pharmacyQuantity;
     }
 
-    public Medication() {
-
-    }
+    public Medication() {};
 
     // -- Getters and Setters -- //
-    public int getMedID() {
-        return this.medID;
-    }
+    public int getMedID() { return this.medID; }
+    public void setMedID(int medID) { this.medID = medID; }
 
-    public void setMedID(int medID) {
-        this.medID = medID;
-    }
+    public String getMedName() { return this.medName; }
+    public void setMedName(String medName) { this.medName = medName; }
 
-    public String getMedName() {
-        return this.medName;
-    }
+    public String getGenericName() { return this.genericName; }
+    public void setGenericName(String genericName) { this.genericName = genericName; }
 
-    public void setMedName(String medName) {
-        this.medName = medName;
-    }
+    public boolean getIsInStock() { return this.isInStock; }
+    public void setIsInStock(boolean isInStock) { this.isInStock = isInStock; }
 
-    public String getGenericName() {
-        return this.genericName;
-    }
-
-    public void setGenericName(String genericName) {
-        this.genericName = genericName;
-    }
-
-    public boolean getIsInStock() {
-        return this.isInStock;
-    }
-
-    public void setIsInStock(boolean isInStock) {
-        this.isInStock = isInStock;
-    }
-
-    public int getPharmacyQuantity() {
-        return this.pharmacyQuantity;
-    }
-
-    public void setPharmacyQuantity(int pharmacyQuantity) {
-        this.pharmacyQuantity = pharmacyQuantity;
-    }
+    public int getPharmacyQuantity() { return this.pharmacyQuantity; }
+    public void setPharmacyQuantity(int pharmacyQuantity) { this.pharmacyQuantity = pharmacyQuantity; }
 
     // -- toString Override for Testing -- //
     @Override

@@ -1,82 +1,101 @@
 package Controller;
 
+import java.util.List;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import User.UserService;
+import SQL.Medication;
 import SQL.Patient;
 import SQL.Prescription;
-import SQL.Medication;
+import User.UserService;
 
-public class SearchHandler { //implements EventHandler<ActionEvent>{
+public class SearchHandler {
     
-    // -- Class Attributes -- //
+    // ----- Class Attributes ----- //
     public ComboBox<String> searchTypeCombo;
     public TextField searchField;
-
+    // --- UserService Object Instantiation --- //
     private UserService userService = new UserService();
-
-    // -- Constructor -- //
-    public SearchHandler(ComboBox<String> searchTypeCombo, TextField searchField) {
+    // --- Constructor --- //
+    public SearchHandler(ComboBox<String> searchTypeCombo, TextField searchField, UserService userService) {
         this.searchTypeCombo = searchTypeCombo;
         this.searchField = searchField;
+        this.userService = userService;
     }
-
-    public void handleSearch(String searchType, String query) {
-
+    // --- Handle Search Method --- //
+    public List<?> handleSearch(String searchType, String query) {
         if (searchType == null || query.isEmpty()) {
             System.out.println("SelectedItem is NULL or rawInput is EMPTY");
-            return;
+            return null;
         }
         switch (searchType) {
             case ("Prescription ID") -> {
-                Prescription script = userService.prescriptionIDSearch(query);
-                if (script != null) {
-                    System.out.println(script.toString());
+                List<Prescription> scripts = userService.prescriptionIDSearch(query);
+                if (scripts != null) {
+                    for (Prescription rx : scripts) {
+                        System.out.println(rx);
+                    }
                 } else {
                     System.out.println("Search Error: Prescription not Found.");
                 }
+                return scripts;
             }
             case ("Patient Name") -> {
-                Patient pat = userService.patientNameSearch(query);
-                if (pat != null) {
-                    System.out.println(pat.toString());
+                List<Patient> pats = userService.patientNameSearch(query);
+                
+                if (pats != null) {
+                    for (Patient p : pats) {
+                        System.out.println(p);
+                    }
                 } else {
                     System.out.println("Search Error: Patient not found.");
                 }
-                
+                return pats;
             }
             case ("Patient DOB") -> {
-                Patient pat2 = userService.patientDOBSearch(query);
-                if (pat2 != null) {
-                    System.out.println(pat2.toString());
+                List<Patient> pats2 = userService.patientDOBSearch(query);
+                if (pats2 != null) {
+                    for (Patient p : pats2) {
+                        System.out.println(p);
+                    }
                 } else {
                     System.out.println("Search Error: Patient not found.");
                 }
+                return pats2;
             }
             case ("Patient Phone Number") -> {
-                Patient pat3 = userService.patientPhoneSearch(query);
-                if (pat3 != null) {
-                    System.out.println(pat3.toString());
+                List<Patient> pats3 = userService.patientPhoneSearch(query);
+                if (pats3 != null) {
+                    for (Patient p : pats3) {
+                        System.out.println(p);
+                    }
                 } else {
                     System.out.println("Search Error: Patient not found.");
                 }
+                return pats3;
             }
             case ("Medication Name") -> {
-                Medication med = userService.medicationSearch(query);
-                if (med != null) {
-                    System.out.println(med.toString());
+                List<Medication> meds = userService.medicationSearch(query);
+                if (meds != null) {
+                    for (Medication med : meds) {
+                        System.out.println(med);
+                    }
                 } else {
                     System.out.println("Search Error: Medication not found.");
                 }
+                return meds;
             }
             case ("Generic Name") -> {
-                Medication gen = userService.genericSearch(query);
-                if (gen != null) {
-                    System.out.println(gen.toString());
+                List<Medication> gens = userService.genericSearch(query);
+                if (gens != null) {
+                    for (Medication gen : gens) {
+                        System.out.println(gen);
+                    }
                 } else {
                     System.out.println("Search Error: Medication not found.");
                 }
+                return gens;
             }
         }
+        return null;
     }
 }

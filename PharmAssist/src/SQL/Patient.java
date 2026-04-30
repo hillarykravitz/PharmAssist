@@ -19,50 +19,23 @@ public class Patient {
         this.phoneNumber = phoneNumber;
     }
 
-    public Patient() {
-
-    }
+    public Patient() {};
 
     // Getters and Setters -- //
-    public int getPatientID() {
-        return this.patientID;
-    }
+    public int getPatientID() { return this.patientID; }
+    public void setPatientID(int patientID) { this.patientID = patientID; }
 
-    public void setPatientID(int patientID) {
-        this.patientID = patientID;
-    }
+    public String getFirstName() { return this.firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
 
-    public String getFirstName() {
-        return this.firstName;
-    }
+    public String getLastName() { return this.lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+    public Date getBirthdate() { return this.birthdate; }
+    public void setBirthdate(Date birthdate) { this.birthdate = birthdate; }
 
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Date getBirthdate() {
-        return this.birthdate;
-    }
-
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public String getPhoneNumber() {
-        return this.phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+    public String getPhoneNumber() { return this.phoneNumber; }
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 
     // -- toString Override for Testing -- //
     @Override

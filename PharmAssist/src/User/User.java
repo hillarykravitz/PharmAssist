@@ -11,7 +11,7 @@ public class User {
     private String passwordHash;
     private String email;
 
-    // -- Constructors -- //
+    // ----- Constructors ----- //
     public User(int employeeID, String firstName, String lastName, String username, String role, String passwordHash, String email) {
         this.employeeID = employeeID;
         this.firstName = firstName;
@@ -22,67 +22,31 @@ public class User {
         this.email = email;
     }
 
-    public User() {
+    // --- Default Constructor --- //
+    public User() {};
 
-    }
+    // ----- Getters and Setters ----- //
+    public int getEmployeeID() { return this.employeeID; }
+    public void setEmployeeID(int employeeID) { this.employeeID = employeeID; }
 
-    // -- Getters and Setters -- //
-    public int getEmployeeID() {
-        return this.employeeID;
-    }
+    public String getFirstName() { return this.firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
 
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
-    }
+    public String getLastName() { return this.lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
-    public String getFirstName() {
-        return this.firstName;
-    }
+    public String getUsername() { return this.username; }
+    public void setUsername(String username) { this.username = username; }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+    public String getRole() { return this.role; }
+    public void setRole(String role) { this.role = role; }
 
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getUsername() {
-        return this.username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getRole() {
-        return this.role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getPasswordHash() {
-        return this.passwordHash;
-    }
-
+    public String getPasswordHash() { return this.passwordHash; }
     // -- Shouldn't be able to use I think -- //
-    // public void setPasswordHash(String passwordHash) {
-    //     this.passwordHash = passwordHash;
-    // }
+    // public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
 
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public String getEmail() { return this.email; }
+    public void setEmail(String email) { this.email = email; }
 
     // -- toString Override for Testing -- //
     @Override

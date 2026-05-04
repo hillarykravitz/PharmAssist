@@ -9,10 +9,11 @@ public class Dosage {
     private String form;
     private String appearance;
     private String frequency;
-    private String quantity;
+    private int quantity;
+    private String unit;
 
     // -- Constructors -- //
-    public Dosage(int dosageID, int medID, String strength, String form, String appearance, String frequency, String quantity) {
+    public Dosage(int dosageID, int medID, String strength, String form, String appearance, String frequency, int quantity, String unit) {
         this.dosageID = dosageID;
         this.medID = medID;
         this.strength = strength;
@@ -20,68 +21,35 @@ public class Dosage {
         this.appearance = appearance;
         this.frequency = frequency;
         this.quantity = quantity;
+        this.unit = unit;
     }
 
-    public Dosage() {
-
-    }
+    public Dosage() {};
 
     // -- Getters and Setters -- //
-    public int getDosageID() {
-        return this.dosageID;
-    }
+    public int getDosageID() { return this.dosageID; }
+    public void setDosageID(int dosageID) { this.dosageID = dosageID; }
 
-    public void setDosageID(int dosageID) {
-        this.dosageID = dosageID;
-    }
+    public int getMedID() { return this.medID; }
+    public void setMedID(int medID) { this.medID = medID; }
 
-    public int getMedID() {
-        return this.medID;
-    }
+    public String getStrength() { return this.strength; }
+    public void setStrength(String strength) { this.strength = strength; }
 
-    public void setMedID(int medID) {
-        this.medID = medID;
-    }
+    public String getForm() { return this.form; }
+    public void setForm(String form) { this.form = form; }
 
-    public String getStrength() {
-        return this.strength;
-    }
+    public String getAppearance() { return this.appearance; }
+    public void setAppearance(String appearance) { this.appearance = appearance; }
 
-    public void setStrength(String strength) {
-        this.strength = strength;
-    }
+    public String getFrequency() { return this.frequency; }
+    public void setFrequency(String frequency) { this.frequency = frequency; }
 
-    public String getForm() {
-        return this.form;
-    }
+    public int getQuantity() { return this.quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
-    public void setForm(String form) {
-        this.form = form;
-    }
-
-    public String getAppearance() {
-        return this.appearance;
-    }
-
-    public void setApperance(String appearance) {
-        this.appearance = appearance;
-    }
-
-    public String getFrequency() {
-        return this.frequency;
-    }
-
-    public void setFrequency(String frequency) {
-        this.frequency = frequency;
-    }
-
-    public String getQuantity() {
-        return this.quantity;
-    }
-
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
-    }
+    public String getUnit() { return this.unit; }
+    public void setUnit(String unit) { this.unit = unit; }
 
     // -- toString Override for Testing -- //
     @Override
@@ -94,8 +62,7 @@ public class Dosage {
                 ", appearance='" + appearance + '\'' +
                 ", frequency='" + frequency + '\'' +
                 ", quantity='" + quantity + '\'' +
+                ", unit='" + unit + '\'' +
                 '}';
     }
-
-
 }

@@ -1,22 +1,21 @@
-import javafx.stage.Stage;
 import Controller.SceneController;
 import javafx.application.Application;
+import javafx.stage.Stage;
+import User.UserService;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
-        // -- SceneCreator Instantiation -- //
+        // ----- SceneController Instantiation ----- //
         SceneController sceneController = new SceneController(primaryStage);
-        
-        // -- Initial setup of Login screen -- //
-        sceneController.switchToLogin();
+        UserService userService = new UserService();
+        // --- Initial setup of Login screen --- //
+        sceneController.switchToLogin(userService);
         primaryStage.show();
     }
-
-    // -- Main Method -- //
     public static void main(String[] args) {
+        // ----- Program Entry ----- //
         launch(args);
     }
 }

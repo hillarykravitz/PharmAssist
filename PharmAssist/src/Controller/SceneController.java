@@ -48,4 +48,3 @@ public class SceneController {
         return stage;
     }
 }
-
